@@ -1,0 +1,41 @@
+﻿
+@model IEnumerable<WebApplication2.Models.spGetAllStudents_Result>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div ng-controller="HomeController">
+    <h2>{{message}}</h2>
+</div>
+<h1>Students Details</h1>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>DOB</th>
+        <th>GPA</th>
+        <th>IsActive</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        <tr >
+            <td>
+                @Html.DisplayFor(model => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.GPA)
+            </td>
+            <td class="dropdown">
+                @Html.DisplayFor(model => item.IsActive)
+            </td>
+        </tr>
+    }
+</table>
+
