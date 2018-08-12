@@ -6,36 +6,44 @@
 
 <div ng-controller="HomeController">
     <h2>{{message}}</h2>
-</div>
-<h1>Students Details</h1>
-<table class="table table-bordered table-striped">
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>DOB</th>
-        <th>GPA</th>
-        <th>IsActive</th>
-    </tr>
-    @foreach (var item in Model)
-    {
 
-        <tr >
-            <td>
-                @Html.DisplayFor(model => item.ID)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.DateOfBirth)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.GPA)
-            </td>
-            <td class="dropdown">
-                @Html.DisplayFor(model => item.IsActive)
-            </td>
+    <h1>Students Details</h1>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>DOB</th>
+            <th>GPA</th>
+            <th>IsActive</th>
         </tr>
-    }
-</table>
+        @*@foreach (var item in Model)
+            {
 
+                <tr >
+                    <td>
+                        @item.ID
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.DateOfBirth)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.GPA)
+                    </td>
+                    <td class="dropdown">
+                        @item.IsActive
+                    </td>
+                </tr>
+            }*@
+        <tr ng-repeat="student in students">
+            <td>{{student.ID}}</td>
+            <td>{{student.Name}}</td>
+            <td>{{student.DateOfBirth}}</td>
+            <td>{{student.GPA}}</td>
+            <td>{{student.IsActive}}</td>
+        </tr>
+    </table>
+
+</div>

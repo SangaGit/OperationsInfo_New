@@ -12,9 +12,9 @@ namespace WebApplication2.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var dbContext = new StudentRegistrationEntitiesDBContext();
-            var students = dbContext.spGetAllStudents().ToList();
-            return View(students);
+            //var dbContext = new StudentRegistrationEntitiesDBContext();
+            //var students = dbContext.spGetAllStudents().ToList();
+            return View();
         }
         public ActionResult ViewStreet()
         {
